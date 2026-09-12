@@ -1,0 +1,152 @@
+/* Gallery */
+.gallery-head {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .gallery-head {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.counter {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+
+.gallery-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.track {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-inline: 1rem;
+  cursor: grab;
+  touch-action: pan-x;
+}
+
+.track:active {
+  cursor: grabbing;
+}
+
+@media (min-width: 640px) {
+  .track {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1152px) {
+  .track {
+    padding-inline: max(1.5rem, calc((100vw - 72rem) / 2 + 1.5rem));
+  }
+}
+
+.g-card {
+  position: relative;
+  flex: 0 0 min(82vw, 28rem);
+  scroll-snap-align: start;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 0;
+  background: var(--navy);
+  text-align: left;
+  color: inherit;
+}
+
+.g-card img {
+  width: 100%;
+  height: 28rem;
+  object-fit: cover;
+  pointer-events: none;
+  transition: transform 500ms var(--ease);
+  outline: 1px solid rgba(244, 239, 230, 0.1);
+  outline-offset: -1px;
+}
+
+@media (min-width: 640px) {
+  .g-card img {
+    height: 32rem;
+  }
+}
+
+.g-card:hover img {
+  transform: scale(1.03);
+}
+
+.g-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(11, 18, 32, 0.92) 100%);
+  pointer-events: none;
+}
+
+.g-meta {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 1.25rem;
+  z-index: 1;
+}
+
+.g-meta p {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.g-meta h3 {
+  font-size: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+.g-meta .desc {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--mist);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.progress-wrap {
+  width: min(100% - 2rem, var(--max));
+  margin: 1.5rem auto 0;
+}
+
+.progress {
+  height: 1px;
+  background: var(--line);
+}
+
+.progress span {
+  display: block;
+  height: 1px;
+  background: var(--gold);
+  width: 8%;
+}
+
+.hint {
+  margin-top: 0.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mist);
+}

@@ -1,0 +1,143 @@
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(11, 18, 32, 0.92);
+  padding: 1rem;
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox img {
+  max-height: 70dvh;
+  width: 100%;
+  max-width: 56rem;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+.lightbox figcaption {
+  max-width: 56rem;
+  margin-top: 1rem;
+}
+
+.lb-close,
+.lb-prev,
+.lb-next {
+  position: absolute;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: 0.375rem;
+  background: var(--navy-2);
+  color: var(--cream);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lb-close {
+  right: 1rem;
+  top: 1rem;
+}
+
+.lb-prev,
+.lb-next {
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.lb-prev {
+  left: 0.75rem;
+}
+
+.lb-next {
+  right: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .lb-prev,
+  .lb-next {
+    display: inline-flex;
+  }
+}
+
+/* FABs + modal */
+.wa-fab,
+.enq-fab {
+  position: fixed;
+  right: 1.25rem;
+  z-index: 40;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 999px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+}
+
+.wa-fab.is-on {
+  display: inline-flex;
+  bottom: 1.25rem;
+  background: var(--whatsapp);
+  color: var(--navy);
+}
+
+.enq-fab.is-on {
+  display: inline-flex;
+  bottom: 6rem;
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.enq-count {
+  position: absolute;
+  right: -2px;
+  top: -2px;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--cream);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(11, 18, 32, 0.8);
+  padding: 1rem;
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+.modal-card {
+  width: min(100%, 40rem);
+  max-height: 90dvh;
+  overflow: auto;
+  background: var(--navy-2);
+  color: var(--cream);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  position: relative;
+  box-shadow:
+    0 0 0 1px rgba(244, 239, 230, 0.12),
+    0 24px 60px -20px rgba(0, 0, 0, 0.7);
+}
