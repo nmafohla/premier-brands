@@ -66,6 +66,7 @@ Copy `.env.example` to `.env.local` for local overrides:
 ## Deployment
 
 ### Vercel Deployment
+
 The production site is hosted on Vercel:
 
 - **Production Domain**: `https://premier.hakili.online`
@@ -78,6 +79,7 @@ npx vercel --prod --yes
 ```
 
 ### cPanel Deployment
+
 This repository is configured with automated GitHub Actions (`.github/workflows/deploy-cpanel.yml`):
 
 1. Every push to `main` automatically runs quality checks, builds the production static assets, and pushes the contents of `dist/` to the `cpanel` branch.
@@ -86,4 +88,3 @@ This repository is configured with automated GitHub Actions (`.github/workflows/
    - Branch: `cpanel`
    - Repository Directory: `/home/username/public_html` (or your chosen subfolder)
 3. Whenever new changes land on `main`, pull the `cpanel` branch in cPanel to update your live site instantly without needing Node.js on the server.
-
