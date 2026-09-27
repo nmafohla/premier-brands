@@ -1,0 +1,42 @@
+name: Deploy cPanel Build
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    name: Build & Push to cPanel Branch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run typecheck & tests
+        run: |
+          npm run typecheck
+          npm run test
+
+      - name: Build production bundle
+        run: npm run build
+
+      - name: Deploy static files to cpanel branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: cpanel
+          folder: dist
+          clean: true
+          commit-message: "deploy: automated cPanel static release [skip ci]"
