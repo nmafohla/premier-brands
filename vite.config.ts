@@ -23,6 +23,7 @@ function htmlPartialPlugin(): Plugin {
 }
 
 export default defineConfig({
+  base: "./",
   plugins: [htmlPartialPlugin()],
   build: {
     outDir: "dist",
