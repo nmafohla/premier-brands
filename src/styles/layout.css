@@ -199,5 +199,19 @@
   .legal {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
+}
+
+.legal a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.legal a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 0.85;
 }
