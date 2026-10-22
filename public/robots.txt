@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://premierbrands.co.zw/sitemap.xml
