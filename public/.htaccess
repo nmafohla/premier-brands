@@ -3,6 +3,14 @@
 Options -Indexes
 AddDefaultCharset UTF-8
 
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
 # Ensure correct MIME types
 <IfModule mod_mime.c>
   AddType image/svg+xml .svg .svgz
@@ -33,6 +41,7 @@ AddDefaultCharset UTF-8
 
 # Security headers
 <IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000"
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set X-XSS-Protection "1; mode=block"
