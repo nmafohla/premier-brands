@@ -70,7 +70,8 @@
   gap: 0.5rem;
 }
 
-.only-desk {
+.only-desk,
+.header-actions .only-desk {
   display: none;
 }
 
@@ -81,7 +82,8 @@
   .menu-btn {
     display: none;
   }
-  .only-desk {
+  .only-desk,
+  .header-actions .only-desk {
     display: inline-flex;
   }
 }
