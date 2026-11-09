@@ -1,6 +1,16 @@
 <section id="home" class="hero">
   <div class="hero-photo">
-    <img src="/assets/storefront-shop2.jpg" alt="Premier Brands Shop 2 storefront in Bulawayo" />
+    <picture>
+      <source srcset="/assets/storefront-shop2.webp" type="image/webp" />
+      <img
+        src="/assets/storefront-shop2.jpg"
+        alt="Premier Brands Shop 2 storefront in Bulawayo"
+        width="768"
+        height="1020"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
   </div>
   <div class="wrap hero-copy">
     <p class="eyebrow">Branding & Printing Excellence</p>
