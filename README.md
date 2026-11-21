@@ -25,6 +25,8 @@ Copy `.env.example` to `.env.local` for local overrides:
 | `VITE_WHATSAPP_NUMBER`           | Primary WhatsApp business phone (digits only)   | `263781977976`                  |
 | `VITE_WHATSAPP_NUMBER_SECONDARY` | Secondary WhatsApp business phone (digits only) | `263783480821`                  |
 | `VITE_SITE_URL`                  | Production website URL                          | `https://premier.hakili.online` |
+| `SITE_LOCK_PASSWORD`             | Password required to unlock protected preview   | Set via `vercel env add`        |
+| `SITE_LOCK_SECRET`               | 32-byte random hex secret for cookie signing    | Run `openssl rand -hex 32`      |
 
 ## Local Setup & Development
 
