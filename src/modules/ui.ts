@@ -154,13 +154,11 @@ export function setupUI(): void {
   document.querySelector("#g-prev")?.addEventListener("click", () => gallery.scrollGallery(-1));
   document.querySelector("#g-next")?.addEventListener("click", () => gallery.scrollGallery(1));
 
-  // Header & FAB Scroll Listener
-  const waFab = document.querySelector<HTMLElement>("#wa-fab");
+  // Header Scroll Listener
   const header = document.querySelector<HTMLElement>(".site-header");
   const sections = ["home", "about", "services", "products", "portfolio", "faq", "contact"];
 
   const handleScroll = (): void => {
-    if (waFab) waFab.classList.toggle("is-on", window.scrollY > 280);
     if (header) header.classList.toggle("scrolled", window.scrollY > 16);
 
     let currentSection = "home";

@@ -69,8 +69,7 @@
   }
 }
 
-/* FABs + modal */
-.wa-fab,
+/* FAB + modal */
 .enq-fab {
   position: fixed;
   right: 1.25rem;
@@ -84,16 +83,9 @@
   border: 0;
 }
 
-.wa-fab.is-on {
-  display: inline-flex;
-  bottom: 1.25rem;
-  background: var(--whatsapp);
-  color: var(--navy);
-}
-
 .enq-fab.is-on {
   display: inline-flex;
-  bottom: 6rem;
+  bottom: 1.25rem;
   background: var(--gold);
   color: var(--ink);
 }
